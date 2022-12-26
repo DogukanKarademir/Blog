@@ -14,7 +14,7 @@
                     
 					<div class="row"> 
 						{% for blogg in bloggs %}
-                        <div class="col-lg-6 col-md-6 col-12" >
+                        <div class="col-lg-6 col-md-6 col-12 mb-4" >
                             <div class="blogg-item">
                                 <div class="image-blog">
                                     <img src="{{ blogg.image.url }}" alt="" class="img-fluid">
@@ -23,8 +23,11 @@
                                     <div class="blogg-title">
                                         <h2><a href="#" title="">{{ blogg.title }}</a></h2>
                                     </div>
+									<div class="blogg-desc">
+                                        <p>{{ blogg.detail }} </p>
+                                    </div>
                                     <div class="blogg-desc">
-                                        <p>{{ blogg.description }} </p>
+                                        <p>{{ blogg.description | truncatechars:140 }} </p>
                                     </div>
                                 </div>
                             </div>
